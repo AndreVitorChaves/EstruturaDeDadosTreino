@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -69,6 +70,7 @@ int especiais(const char *str){
 int main()
 {
     char senha [50];
+    int validar = 0;
 
     printf("===============================\n");
     printf("Bem vindo(a) ao sistema verificador de senhas!\n");
@@ -78,8 +80,9 @@ int main()
     printf("\n Digite sua senha: ");
     scanf("%s", senha);
 
-    
+
         if(strlen(senha) < 10){
+                validar = 1;
         printf("\n Senha invalida! \n Possui menos caracteres do que o minimo esperado (10)! \n");
             if (maiuscula(senha) < 2){
                 printf("\n Possui menos caracteres maiusculos do que o minimo esperado (2)! \n");
@@ -92,11 +95,12 @@ int main()
             }
             if (especiais(senha) < 2){
                             printf("\n Possui menos caracteres especiais do que o minimo esperado (2)! \n");
-            }          
+            }
         }
 
         else{
             if (maiuscula(senha) < 2){
+                    validar = 1;
                 printf("\n Senha invalida! \n Possui menos caracteres maiusculos do que o minimo esperado (2)! \n");
                 if (minuscula(senha) < 3){
                     printf("\n Possui menos caracteres minusculos do que o minimo esperado (3)! \n");
@@ -111,6 +115,7 @@ int main()
 
             else{
                 if (minuscula(senha) < 3){
+                        validar = 1;
                     printf("\n Senha invalida! \n Possui menos caracteres minusculos do que o minimo esperado (3)! \n");
                     if (numerico(senha) < 3){
                         printf("\n Possui menos caracteres numericos do que o minimo esperado (3)! \n");
@@ -122,6 +127,7 @@ int main()
 
                 else{
                     if (numerico(senha) < 3){
+                            validar = 1;
                         printf("\n Senha invalida! \n Possui menos caracteres numericos do que o minimo esperado (3)! \n");
                         if (especiais(senha) < 2){
                             printf("\n Possui menos caracteres especiais do que o minimo esperado (2)! \n");
@@ -130,19 +136,21 @@ int main()
 
                     else{
                         if (especiais(senha) < 2){
+                                validar = 1;
                             printf("\n Senha invalida! \n Possui menos caracteres especiais do que o minimo esperado (2)! \n");
                         }
                         else{
+                            validar = 0;
                             printf("Parabens, voce digitou uma senha valida e extremamente forte! \n");
                         }
                     }
                 }
             }
         }
-    
 
-   
-    }while (strlen(senha) < 10);
+
+
+    }while (validar != 0);
 
     int qntMaiusculas = maiuscula(senha);
     printf ("\n Letras maiusculas: %i \n", qntMaiusculas );
@@ -158,3 +166,6 @@ int main()
 
     return 0;
 }
+
+
+
