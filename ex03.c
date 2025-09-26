@@ -32,7 +32,7 @@ int main()
         }
         
         for (int camp = 0; camp < 2; camp++){
-            printf("\n ======================== \n");
+            printf("\n ===================== \n");
             printf("\n %s: \n", campeonatos[camp]);
             printf("======================== \n");
             
