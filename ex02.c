@@ -50,7 +50,7 @@ int main()
     }
     
     for (int linha = 0; linha < 6; linha++){
-        printf("Media de %s: %.2f \n", disciplinas[linha], notaFinal[linha]);
+        printf("\n Media de %s: %.2f \n", disciplinas[linha], notaFinal[linha]);
     }
     
     
