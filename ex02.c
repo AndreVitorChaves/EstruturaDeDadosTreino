@@ -1,3 +1,5 @@
+//André Vitor Chaves Franco - CV3095169
+
 #include <stdio.h>
 #include <string.h>
 
@@ -28,7 +30,7 @@ int main()
 
 
     for (int l = 0; l < 35; l++){
-        printf("Cadastre o aluno %i: ", l);
+        printf("Cadastre o aluno %i: ", l + 1);
         fgets(alunos[l], sizeof(alunos[l]), stdin);
     }
 
@@ -73,3 +75,10 @@ int main()
 
      return 0;
 }
+
+
+
+
+
+
+
